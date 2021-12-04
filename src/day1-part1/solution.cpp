@@ -1,12 +1,13 @@
 #include <algorithm>
 #include <iterator>
-#include <array>
+#include <span>
 
-template <std::size_t N>
-int countIncreases(const std::array<int, N> &values)
+using namespace std;
+
+int countIncreases(span<const int> values)
 {
     int previous = values.front();
-    return std::count_if(
+    return count_if(
         values.begin(),
         values.end(),
         [&previous](int current)
