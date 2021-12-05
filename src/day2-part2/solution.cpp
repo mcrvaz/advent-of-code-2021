@@ -34,7 +34,7 @@ class Day2Part2Solution
     };
 
 public:
-    int measureDistance(span<const string> values)
+    int solve(span<const string> values)
     {
 
         Distance distance{};

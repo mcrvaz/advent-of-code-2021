@@ -4,14 +4,12 @@
 TEST(Day2Part2, ExampleTest)
 {
     EXPECT_EQ(
-        Day2Part2Solution{}.measureDistance(std::array<string, 6>{
+        Day2Part2Solution{}.solve(std::array<string, 6>{
             "forward 5",
             "down 5",
             "forward 8",
             "up 3",
             "down 8",
-            "forward 2"
-        }),
-        900
-    );
+            "forward 2"}),
+        900);
 }

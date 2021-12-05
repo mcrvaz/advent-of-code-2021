@@ -7,7 +7,7 @@ using namespace std;
 class Day1Part1Solution
 {
 public:
-    int countIncreases(span<const int> values)
+    int solve(span<const int> values)
     {
         int previous = values.front();
         return count_if(

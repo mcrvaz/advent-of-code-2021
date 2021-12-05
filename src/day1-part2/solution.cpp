@@ -18,7 +18,7 @@ class Day1Part2Solution
     }
 
 public:
-    int countGroupIncreases(span<const int> values, const int groupSize)
+    int solve(span<const int> values, const int groupSize)
     {
         int countIncreases{};
         Group currentGroup = {size : 1, sum : values.front()};
