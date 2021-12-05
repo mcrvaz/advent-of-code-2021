@@ -3,6 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-    auto values = getIntValues("input.txt");
-    std::cout << countGroupIncreases(values, 3);
+    auto values = getStringValues("input.txt");
+    std::cout << measureDistance(values);
 }

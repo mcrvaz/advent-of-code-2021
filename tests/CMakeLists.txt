@@ -11,6 +11,7 @@ add_executable(
     TestFiles
     day1-part1-test.cc
     day1-part2-test.cc
+    day2-part1-test.cc
 )
 target_link_libraries(
     TestFiles
