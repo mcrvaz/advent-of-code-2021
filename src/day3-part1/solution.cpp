@@ -40,9 +40,11 @@ public:
         for (auto i = 0; i < columnCount; i++)
             mostCommonBits[i] = getMostCommonBit(values, i);
 
+        vector<bool> leastCommonBits(mostCommonBits);
+        leastCommonBits.flip();
+
         int gammaRate = vectorToInt(mostCommonBits);
-        mostCommonBits.flip();
-        int epsilonRate = vectorToInt(mostCommonBits);
+        int epsilonRate = vectorToInt(leastCommonBits);
         return gammaRate * epsilonRate;
     }
 };
