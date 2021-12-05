@@ -1,27 +1,27 @@
 #include <gtest/gtest.h>
 #include "../src/day1-part1/solution.cpp"
 
-TEST(CountIncreases, OneValueNoIncreases)
+TEST(Day1Part1, OneValueNoIncreases)
 {
     EXPECT_EQ(Day1Part1Solution{}.solve(std::array{1}), 0);
 }
 
-TEST(CountIncreases, MultipleValuesNoIncreases)
+TEST(Day1Part1, MultipleValuesNoIncreases)
 {
     EXPECT_EQ(Day1Part1Solution{}.solve(std::array{1, 1}), 0);
 }
 
-TEST(CountIncreases, MultipleValueAlwaysIncreases)
+TEST(Day1Part1, MultipleValueAlwaysIncreases)
 {
     EXPECT_EQ(Day1Part1Solution{}.solve(std::array{1, 2, 3}), 2);
 }
 
-TEST(CountIncreases, MultipleValueAlternatingIncreases)
+TEST(Day1Part1, MultipleValueAlternatingIncreases)
 {
     EXPECT_EQ(Day1Part1Solution{}.solve(std::array{1, 2, 1, 2}), 2);
 }
 
-TEST(CountIncreases, ExampleTest)
+TEST(Day1Part1, ExampleTest)
 {
     EXPECT_EQ(
         Day1Part1Solution{}.solve(std::array{

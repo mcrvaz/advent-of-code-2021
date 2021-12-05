@@ -61,7 +61,8 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "bitset": "cpp"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
