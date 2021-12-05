@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 #include "../src/day2-part1/solution.cpp"
 
-TEST(MeasureDistance, ExampleTest)
+TEST(Day2Part1, ExampleTest)
 {
     EXPECT_EQ(
-        measureDistance(std::array<string, 6>{
+        Day2Part1Solution{}.measureDistance(std::array<string, 6>{
             "forward 5",
             "down 5",
             "forward 8",

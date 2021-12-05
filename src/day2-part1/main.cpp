@@ -4,5 +4,5 @@
 int main(int argc, char *argv[])
 {
     auto values = getStringValues("input.txt");
-    std::cout << measureDistance(values);
+    std::cout << Day2Part1Solution{}.measureDistance(values);
 }

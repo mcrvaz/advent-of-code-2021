@@ -3,6 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-    auto values = getValues("input.txt");
-    std::cout << countIncreases(values);
+    auto values = getIntValues("input.txt");
+    std::cout << Day1Part1Solution{}.countIncreases(values);
 }

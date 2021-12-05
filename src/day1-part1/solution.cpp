@@ -4,16 +4,20 @@
 
 using namespace std;
 
-int countIncreases(span<const int> values)
+class Day1Part1Solution
 {
-    int previous = values.front();
-    return count_if(
-        values.begin(),
-        values.end(),
-        [&previous](int current)
-        {
-            bool result = current > previous;
-            previous = current;
-            return result;
-        });
-}
+public:
+    int countIncreases(span<const int> values)
+    {
+        int previous = values.front();
+        return count_if(
+            values.begin(),
+            values.end(),
+            [&previous](int current)
+            {
+                bool result = current > previous;
+                previous = current;
+                return result;
+            });
+    }
+};

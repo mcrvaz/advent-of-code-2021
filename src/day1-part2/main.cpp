@@ -4,5 +4,5 @@
 int main(int argc, char *argv[])
 {
     auto values = getIntValues("input.txt");
-    std::cout << countGroupIncreases(values, 3);
+    std::cout << Day1Part2Solution{}.countGroupIncreases(values, 3);
 }

@@ -4,33 +4,37 @@
 
 using namespace std;
 
-struct Distance
+class Day2Part1Solution
 {
-    int depth{};
-    int horizontal{};
-
-    int totalDistance()
+    struct Distance
     {
-        return depth * horizontal;
-    }
+        int depth{};
+        int horizontal{};
 
-    void parseCommand(const string command)
+        int totalDistance()
+        {
+            return depth * horizontal;
+        }
+
+        void parseCommand(const string command)
+        {
+            auto commandName = command.substr(0, command.find(" "));
+            auto commandValue = stoi(command.substr(command.find(" ")));
+            if (commandName == "forward")
+                horizontal += commandValue;
+            else if (commandName == "down")
+                depth += commandValue;
+            else if (commandName == "up")
+                depth -= commandValue;
+        }
+    };
+
+public:
+    int measureDistance(span<const string> values)
     {
-        auto commandName = command.substr(0, command.find(" "));
-        auto commandValue = stoi(command.substr(command.find(" ")));
-        if (commandName == "forward")
-            horizontal += commandValue;
-        else if (commandName == "down")
-            depth += commandValue;
-        else if (commandName == "up")
-            depth -= commandValue;
+        Distance distance{};
+        for (auto command : values)
+            distance.parseCommand(command);
+        return distance.totalDistance();
     }
 };
-
-int measureDistance(span<const string> values)
-{
-    Distance distance{};
-    for (auto command : values)
-        distance.parseCommand(command);
-    return distance.totalDistance();
-}
