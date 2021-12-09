@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/day3-part1/solution.cpp"
+#include "../src/day3-part1/solution.hh"
 
 TEST(Day3Part1, ExampleTest)
 {

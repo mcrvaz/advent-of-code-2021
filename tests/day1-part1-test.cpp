@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/day1-part1/solution.cpp"
+#include "../src/day1-part1/solution.hh"
 
 TEST(Day1Part1, OneValueNoIncreases)
 {

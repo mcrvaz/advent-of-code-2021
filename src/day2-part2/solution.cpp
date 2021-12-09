@@ -1,45 +1,22 @@
 #include <algorithm>
 #include <iterator>
 #include <span>
+#include <iostream>
+#include "./solution.hh"
+#include "../utils/file-utils.hh"
 
 using namespace std;
 
-class Day2Part2Solution
+int Day2Part2Solution::solve(span<const string> values)
 {
-    struct Distance
-    {
-        int depth{};
-        int horizontal{};
-        int aim{};
+    Distance distance{};
+    for (auto command : values)
+        distance.parseCommand(command);
+    return distance.totalDistance();
+}
 
-        int totalDistance()
-        {
-            return depth * horizontal;
-        }
-
-        void parseCommand(const string command)
-        {
-            auto commandName = command.substr(0, command.find(" "));
-            auto commandValue = stoi(command.substr(command.find(" ")));
-            if (commandName == "forward")
-            {
-                horizontal += commandValue;
-                depth += (aim * commandValue);
-            }
-            else if (commandName == "down")
-                aim += commandValue;
-            else if (commandName == "up")
-                aim -= commandValue;
-        }
-    };
-
-public:
-    int solve(span<const string> values)
-    {
-
-        Distance distance{};
-        for (auto command : values)
-            distance.parseCommand(command);
-        return distance.totalDistance();
-    }
-};
+void Day2Part2Solution::solve()
+{
+    auto values = FileUtils::getStringValues("input.txt");
+    std::cout << solve(values);
+}

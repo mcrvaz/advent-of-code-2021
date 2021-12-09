@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/day1-part2/solution.cpp"
+#include "../src/day1-part2/solution.hh"
 
 const int GROUP_SIZE = 3;
 
