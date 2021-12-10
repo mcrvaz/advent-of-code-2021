@@ -1,7 +1,8 @@
-#include "./day1-part1/solution.hh"
+#include <iostream>
+#include "./day3-part2/solution.hh"
 
 int main(int argc, char const *argv[])
 {
-    Day1Part1Solution().solve();
+    Day3Part2Solution().solve();
     return 0;
 }

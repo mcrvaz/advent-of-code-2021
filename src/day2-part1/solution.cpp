@@ -17,6 +17,6 @@ int Day2Part1Solution::solve(span<const string> values)
 
 void Day2Part1Solution::solve()
 {
-    auto values = FileUtils::getStringValues("input.txt");
+    auto values = FileUtils::getStringValues("day2-part1/input.txt");
     cout << solve(values);
 }

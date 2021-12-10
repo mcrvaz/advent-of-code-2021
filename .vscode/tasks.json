@@ -9,6 +9,13 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				"${fileDirname}\\day1-part1\\*.cpp",
+				"${fileDirname}\\day1-part2\\*.cpp",
+				"${fileDirname}\\day2-part1\\*.cpp",
+				"${fileDirname}\\day2-part2\\*.cpp",
+				"${fileDirname}\\day3-part1\\*.cpp",
+				"${fileDirname}\\day3-part2\\*.cpp",
+				"${fileDirname}\\utils\\*.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",
 				"-std=c++20"

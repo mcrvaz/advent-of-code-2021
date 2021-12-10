@@ -15,6 +15,8 @@ class Day3Part2Solution
 
     bool getMostCommonBit(const span<string> values, int column);
 
+    int getRating(const span<const string> input, bool flipCommonBit);
+
     int getOxygenRating(const span<const string> input);
 
     int getCO2ScrubberRating(const span<const string> input);

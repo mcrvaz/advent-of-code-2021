@@ -23,6 +23,6 @@ int Day1Part1Solution::solve(span<const int> values)
 
 void Day1Part1Solution::solve()
 {
-    auto values = FileUtils::getIntValues("input.txt");
+    auto values = FileUtils::getIntValues("day1-part1/input.txt");
     cout << solve(values);
 }

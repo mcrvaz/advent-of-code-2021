@@ -27,49 +27,52 @@ bool Day3Part2Solution::getMostCommonBit(const span<string> values, int column)
     return oneCount >= zeroCount;
 }
 
-int Day3Part2Solution::getOxygenRating(const span<const string> input)
+int Day3Part2Solution::getRating(const span<const string> input, bool flipRelevantBit)
 {
     vector<string> values(input.size());
     values.assign(input.begin(), input.end());
 
+    int lineCount = values.size();
     int columnCount = values[0].size();
     for (auto i = 0; i < columnCount; i++)
     {
         bool relevantBit = getMostCommonBit(values, i);
-        for (auto j = 0; j < columnCount; j++)
+        if (flipRelevantBit)
+            relevantBit = !relevantBit;
+
+        for (auto j = 0; j < values.size(); j++)
         {
             if (literalCharToInt(values[j][i]) != (int)relevantBit)
+            {
                 values.erase(values.begin() + j);
+                j--;
+            }
+            if (values.size() == 1)
+                return VectorUtils::vectorToInt(VectorUtils::toBoolVector(values[0]));
         }
     }
     return VectorUtils::vectorToInt(VectorUtils::toBoolVector(values[0]));
+}
+
+int Day3Part2Solution::getOxygenRating(const span<const string> input)
+{
+    return getRating(input, false);
 }
 
 int Day3Part2Solution::getCO2ScrubberRating(const span<const string> input)
 {
-    vector<string> values(input.size());
-    values.assign(input.begin(), input.end());
-
-    int columnCount = values[0].size();
-    for (auto i = 0; i < columnCount; i++)
-    {
-        bool relevantBit = !getMostCommonBit(values, i);
-        for (auto j = 0; j < columnCount; j++)
-        {
-            if (literalCharToInt(values[j][i]) != (int)relevantBit)
-                values.erase(values.begin() + j);
-        }
-    }
-    return VectorUtils::vectorToInt(VectorUtils::toBoolVector(values[0]));
+    return getRating(input, true);
 }
 
 int Day3Part2Solution::solve(const span<const string> values)
 {
-    return getOxygenRating(values) * getCO2ScrubberRating(values);
+    auto oxygen = getOxygenRating(values);
+    auto co2 = getCO2ScrubberRating(values);
+    return oxygen * co2;
 }
 
 void Day3Part2Solution::solve()
 {
-    auto values = FileUtils::getStringValues("input.txt");
+    auto values = FileUtils::getStringValues("day3-part2/input.txt");
     cout << solve(values);
 }

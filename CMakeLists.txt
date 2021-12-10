@@ -24,10 +24,10 @@ file(GLOB SOURCES_LIB "${PATH_SOURCE}/**/**.cpp" "${PATH_SOURCE}/**/**.hh")
 file(GLOB SOURCES_TEST "${PATH_TEST}/*.cpp" "${PATH_TEST}/*.hh")
 
 add_library(${NAME_LIB} "${SOURCES_LIB}")
-add_executable(MAIN src/main.cpp)
+add_executable(main src/main.cpp)
 add_executable(${NAME_TEST} "${SOURCES_TEST}")
 
-target_link_libraries(MAIN ${NAME_LIB})
+target_link_libraries(main ${NAME_LIB})
 target_link_libraries(${NAME_TEST} ${NAME_LIB} gtest_main)
 
 include(GoogleTest)

@@ -39,6 +39,6 @@ int Day1Part2Solution::solve(span<const int> values, const int groupSize)
 
 void Day1Part2Solution::solve()
 {
-    auto values = FileUtils::getIntValues("input.txt");
+    auto values = FileUtils::getIntValues("day1-part2/input.txt");
     std::cout << solve(values, 3);
 }
